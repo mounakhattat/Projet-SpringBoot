@@ -3,6 +3,7 @@ package com.example.station_ski.Entities;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 @Table( name = "Moniteur")
@@ -15,7 +16,8 @@ public class Moniteur implements Serializable {  // convertir la forme l'objet e
     private String nomM;
     private String prenomM;
     private Date daterecru;
-
+    @OneToMany(cascade = CascadeType.ALL)
+    private Set<Cours> cours;
 
 // Constructeur et accesseurs (getters) et mutateurs (setters)
 }

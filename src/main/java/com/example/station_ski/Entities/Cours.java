@@ -3,6 +3,7 @@ package com.example.station_ski.Entities;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 @Table( name = "Cours")
@@ -19,4 +20,6 @@ public class Cours implements Serializable {  // convertir la forme l'objet en  
     private Support support;
     private Float prix;
     private Integer creneau;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy="cours")
+    private Set<Inscription> inscription;
 }

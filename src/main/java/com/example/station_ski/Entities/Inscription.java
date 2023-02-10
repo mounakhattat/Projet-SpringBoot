@@ -13,6 +13,10 @@ public class Inscription implements Serializable {  // convertir la forme l'obje
     private Integer idInscription; // Clé primaire
     private Long numInscription;
     private Integer numSemaine;
+    @ManyToOne
+    Skieur skieur;
+    @ManyToOne
+    Cours cours;
 
 
 // Constructeur et accesseurs (getters) et mutateurs (setters)
